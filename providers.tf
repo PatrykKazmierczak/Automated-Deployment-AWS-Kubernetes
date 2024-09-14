@@ -9,9 +9,18 @@ terraform {
       version = "5.67.0"         # Exact version of the AWS provider required
     }
   }
+  backend "s3" {
+    bucket         = "weather-app-patronix9345"  # S3 bucket name where the state file will be stored
+    key            = "terraform.tfstate"                  # Path within the S3 bucket for the state file
+    region         = "eu-north-1"                         # AWS region where the S3 bucket is located
+  }
 }
 
 # Configure the AWS provider
 provider "aws" {
   region = "eu-north-1"  # AWS region where resources will be created
+}
+
+provider "archive" {
+  
 }

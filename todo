@@ -1,0 +1,2 @@
+  - Push Docker images to **AWS ECR (Elastic Container Registry)** or **Docker Hub**.
+I need to create ECR with Terraform and then run script which will deploy my docker image to ecr
