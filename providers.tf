@@ -8,5 +8,9 @@ terraform {
 }
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-north-1"
+}
+
+resource "aws_vpc" "weather_app" {
+  cidr_block = "10.0.0.0/16"
 }
