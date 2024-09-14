@@ -6,19 +6,12 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"  # Provider source from HashiCorp
-      version = "5.66.0"         # Exact version of the AWS provider required
-    }
-    archive = {
-      source = "hashicorp/archive"
-      version = "2.6.0"
+      version = "5.67.0"         # Exact version of the AWS provider required
     }
   }
-
-  # Configure the AWS provider
-provider "aws" {
-  region = "eu-north-1"  # AWS region where resources will be created
 }
 
-provider "archive" {
-  # Configuration options
+# Configure the AWS provider
+provider "aws" {
+  region = "eu-north-1"  # AWS region where resources will be created
 }
