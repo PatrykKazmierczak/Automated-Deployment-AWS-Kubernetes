@@ -1,8 +1,6 @@
-# Use an official Nginx image to serve the frontend
+
+# Use an official nginx runtime as a base image
 FROM nginx:alpine
 
-# Copy the HTML file to the Nginx folder
-COPY index.html /usr/share/nginx/html/index.html
-
-# Expose port 80
-EXPOSE 80
+# Copy the frontend files (HTML, JS, CSS) into the container
+COPY . /usr/share/nginx/html
