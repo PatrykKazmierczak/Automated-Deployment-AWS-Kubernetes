@@ -29,5 +29,5 @@ data "aws_iam_policy_document" "weather_bucket_policy" {
 # Attach the policy to the S3 bucket
 resource "aws_s3_bucket_policy" "weather_bucket_policy" {
   bucket = aws_s3_bucket.bucket.id  # Reference to the S3 bucket created above
-  policy = data.aws_iam_policy_document.bucket_policy.json  # JSON representation of the IAM policy document
+  policy = data.aws_iam_policy_document.weather_bucket_policy  # JSON representation of the IAM policy document
 }
