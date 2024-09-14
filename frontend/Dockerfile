@@ -1,6 +1,8 @@
-
-# Use an official nginx runtime as a base image
+# Use an official nginx image
 FROM nginx:alpine
 
-# Copy the frontend files (HTML, JS, CSS) into the container
+# Copy the static files into NGINX web server directory
 COPY . /usr/share/nginx/html
+
+# Copy custom NGINX configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
