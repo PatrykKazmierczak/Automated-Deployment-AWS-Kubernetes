@@ -1,4 +1,6 @@
-resource "aws_ecr_repository" "foo" {
+
+# Define the private ECR repository
+resource "aws_ecr_repository" "weather-app" {
   name                 = "weather-app"
   image_tag_mutability = "MUTABLE"
 
@@ -6,3 +8,4 @@ resource "aws_ecr_repository" "foo" {
     scan_on_push = true
   }
 }
+
