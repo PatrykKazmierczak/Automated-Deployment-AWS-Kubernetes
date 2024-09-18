@@ -19,3 +19,4 @@ spec:
         image: patronix9345/automated-deployment-aws-kubernetes-backend
         ports:
         - containerPort: 5000
+
