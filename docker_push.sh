@@ -1,7 +1,18 @@
 #!/bin/bash
-
+# ----------------------------------------------------------------------------
 # Script to tag and push Docker images to Docker Hub for frontend and backend
-
+# ----------------------------------------------------------------------------
+# Creation Date: 2024-09-18
+# Last Modified: 2024-09-18
+# Author: Patryk Kaźmierczak
+# Description: This script tags and pushes Docker images for frontend and
+#              backend applications to Docker Hub. It requires the Docker Hub
+#              username as an argument. The script:
+#              1. Checks if the Docker Hub username is provided.
+#              2. Retrieves the image IDs for the frontend and backend images.
+#              3. Tags the images with the latest tag.
+#              4. Pushes the tagged images to Docker Hub.
+# ----------------------------------------------------------------------------
 # Check if Docker Hub username is provided
 if [ -z "$1" ]; then
   echo "Error: Docker Hub username is required."
