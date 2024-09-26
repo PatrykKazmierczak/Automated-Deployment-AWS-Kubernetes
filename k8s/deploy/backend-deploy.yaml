@@ -19,19 +19,16 @@ spec:
         image: patronix9345/automated-deployment-aws-kubernetes-backend
         ports:
         - containerPort: 5000
-        livenessProbe:           # Indentation corrected here
+        livenessProbe:
           httpGet:
             path: /healthz
             port: 5000
           initialDelaySeconds: 10
           periodSeconds: 5
-        readinessProbe:          # Indentation corrected here
+        readinessProbe:
           httpGet:
             path: /healthz
             port: 5000
           initialDelaySeconds: 5
           periodSeconds: 5
-
-        
-
 

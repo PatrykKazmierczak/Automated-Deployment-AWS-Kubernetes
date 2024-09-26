@@ -19,6 +19,12 @@ spec:
         image: patronix9345/automated-deployment-aws-kubernetes-frontend
         ports:
         - containerPort: 80
+        env:
+        - name: ENVIRONMENT               # Using ConfigMap in deployment
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: ENVIRONMENT
         livenessProbe:
           httpGet:
             path: /healthz
@@ -31,3 +37,4 @@ spec:
             port: 80
           initialDelaySeconds: 5
           periodSeconds: 5
+
