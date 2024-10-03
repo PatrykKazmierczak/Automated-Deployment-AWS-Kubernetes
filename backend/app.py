@@ -1,7 +1,11 @@
 from flask import Flask, jsonify, request
 import requests
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
+
+# Initialize Prometheus metrics
+metrics = PrometheusMetrics(app)
 
 # OpenWeatherMap API key
 API_KEY = "b7fea3cdd48393ed8f9e804810bb4c22"
@@ -37,6 +41,11 @@ def get_weather():
 @app.route('/healthz', methods=['GET'])
 def health_check():
     return "OK", 200
+
+# Prometheus metrics endpoint
+@app.route('/metrics', methods=['GET'])
+def metrics():
+    return metrics.do_export()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
